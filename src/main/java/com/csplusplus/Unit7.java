@@ -1,7 +1,6 @@
 package com.csplusplus;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Unit7 {
 
