@@ -1,89 +1,78 @@
-# Unit 7 - Working with ArrayLists in Java
+# Unit 7: ArrayList
+
+AP Computer Science A
 
 ## Overview
-In this unit, students will learn about working with `ArrayLists`, a dynamic data structure in Java. Students will practice performing various operations such as adding, removing, and modifying elements, as well as reversing, shuffling, and filtering elements from an `ArrayList`. This unit will help students understand how to manually manipulate an `ArrayList` without using advanced libraries or utilities like `Collections`.
 
-## Learning Objectives
-- Understand how to declare and manipulate an `ArrayList` in Java.
-- Perform operations such as adding, removing, and modifying elements.
-- Manually reverse, shuffle, and filter elements in an `ArrayList`.
-- Implement logic using only core `ArrayList` methods: `size()`, `add()`, `get()`, `set()`, and `remove()`.
-
-## Key Concepts
-- **ArrayList**: A dynamic, resizable array used to store objects of the same type.
-- **Autoboxing and Unboxing**: The automatic conversion between primitive types and their wrapper classes (e.g., `int` to `Integer`).
-- **Indexing**: Accessing elements using an index, with the first element at index `0`.
-- **Modifying Lists**: Using methods like `add()`, `get()`, `set()`, and `remove()` to manipulate the contents of an `ArrayList`.
-
-## Instructions for Students
-1. You are required to implement the methods provided in `Unit7.java`.
-2. **DO NOT** use the `Collections` class or methods like `contains()`, `removeIf()`, `shuffle()`, or `sort()`. You are limited to using only the following `ArrayList` methods:
-   - `size()`
-   - `add()`
-   - `get()`
-   - `set()`
-   - `remove()`
-3. Write your own logic for reversing, shuffling, and modifying the `ArrayList`.
-
-## Assignment
-Complete the following methods in `Unit7.java`:
-1. **sumOfElements**: Calculate and return the sum of all elements in the `ArrayList`.
-2. **removeAllInstances**: Remove all instances of a specific element from the `ArrayList`.
-3. **doubleAllElements**: Double the value of each element in the `ArrayList`.
-4. **addIfNotPresent**: Add an element to the `ArrayList` only if it is not already present.
-5. **getEvenElements**: Return a new `ArrayList` containing only the even elements from the input list.
-6. **removeElementsDivisibleBy5**: Remove all elements that are divisible by 5 from the `ArrayList`.
-7. **reverseList**: Reverse the order of elements in the `ArrayList` without using the `Collections` class.
-8. **shuffleList**: Shuffle the order of elements in the `ArrayList` manually, without using `Collections.shuffle()`.
-
-## JUnit Tests Description and Points
-
-1. **Test Sum of Elements (10 points)**  
-   Verifies that the method correctly calculates the sum of all elements in an `ArrayList`.
-
-2. **Test Remove All Instances (10 points)**  
-   Ensures that all instances of a specified element are removed from the `ArrayList`.
-
-3. **Test Double All Elements (10 points)**  
-   Checks that all elements in the `ArrayList` are correctly doubled.
-
-4. **Test Add If Not Present (10 points)**  
-   Verifies that an element is added to the `ArrayList` only if it is not already present.
-
-5. **Test Get Even Elements (10 points)**  
-   Confirms that only even elements are returned in a new `ArrayList`.
-
-6. **Test Remove Elements Divisible by 5 (15 points)**  
-   Ensures that all elements divisible by 5 are removed from the `ArrayList`.
-
-7. **Test Reverse List (15 points)**  
-   Verifies that the `ArrayList` is correctly reversed.
-
-8. **Test Shuffle List (20 points)**  
-   Tests that the `ArrayList` is shuffled in a random order and that the original elements are retained.
+This project covers **Unit 7: ArrayList** concepts including ArrayList operations, traversal, element removal, and common algorithms. You may ONLY use `size()`, `add()`, `get()`, `set()`, and `remove()` — no `contains()`, `removeIf()`, or `Collections` class. Implement the 8 methods in `Unit7.java` and run the provided JUnit tests to verify your work.
 
 ## Getting Started
-1. Clone the repository containing the Unit 7 project.
-2. Open the project in your preferred IDE (such as IntelliJ IDEA or Eclipse).
-3. Navigate to `Unit7.java` and implement the required methods.
-4. Run the JUnit tests in `Unit7Test.java` to verify your implementations.
-5. Ensure all tests pass before submitting your code.
 
-## Submission
-Submit your completed `Unit7.java` file through the course's designated submission platform by the due date. Ensure that all tests pass and your code adheres to the style guidelines provided in class.
+### Option 1: GitHub Codespaces (Recommended)
 
-## Resources
-- [Java Documentation](https://docs.oracle.com/javase/8/docs/api/)
-- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
-- [Java ArrayList Tutorial](https://docs.oracle.com/javase/tutorial/collections/interfaces/list.html)
+1. Click the green **Code** button on this repository
+2. Select the **Codespaces** tab
+3. Click **Create codespace on main**
+4. Wait for the environment to build (~2 minutes the first time)
+5. Start coding in `src/main/java/com/csplusplus/Unit7.java`
 
-## Support
-If you encounter any issues or have questions about the assignment, please reach out during office hours or post in the course discussion forum.
+> **Note:** If the Java extension shows errors on first load, press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows) and run **"Developer: Reload Window"**. This is a one-time setup step.
 
-For additional assistance, contact: **Kevin** at [kevin@csplusplus.com](mailto:kevin@csplusplus.com).
+### Option 2: Local Development
 
----
+1. Accept the assignment via the GitHub Classroom link
+2. Clone the repository using GitHub Desktop
+3. Open the project in your IDE (VS Code, IntelliJ, or Eclipse)
+4. **Requirements:** Java 17+, Maven 3.x
 
-**Unit 7 - Working with ArrayLists in Java** is part of the AP Computer Science A course, aimed at building a strong foundation in data structures and list manipulation.
+## Running Tests
 
----
+### In VS Code / Codespaces
+
+Click the green play button next to any test method in `Unit7Test.java`, or open the **Testing** sidebar (beaker icon).
+
+### Command Line
+
+Run all tests:
+```
+mvn test
+```
+
+Run a single method's tests:
+```
+mvn -Dtest=Unit7Test#testSumOfElements test
+```
+
+## Scoring
+
+| # | Method | Points | Concepts |
+|---|--------|--------|----------|
+| 1 | `sumOfElements(ArrayList)` | 10 | ArrayList traversal, accumulator |
+| 2 | `removeAllInstances(ArrayList, int)` | 10 | Removing while iterating (loop backwards!) |
+| 3 | `doubleAllElements(ArrayList)` | 10 | `set()` to modify in place |
+| 4 | `addIfNotPresent(ArrayList, int)` | 10 | Manual search (no `contains()`) |
+| 5 | `getEvenElements(ArrayList)` | 10 | Filtering, creating new list |
+| 6 | `removeElementsDivisibleBy5(ArrayList)` | 15 | Modulo operator, backwards removal |
+| 7 | `reverseList(ArrayList)` | 15 | Swapping elements |
+| 8 | `shuffleList(ArrayList)` | 20 | Fisher-Yates shuffle algorithm |
+| | **Total** | **100** | |
+
+## Important Constraint
+
+You may **only** use these ArrayList methods: `size()`, `add()`, `get()`, `set()`, `remove()`. Do NOT use `contains()`, `indexOf()`, `removeIf()`, `Collections.sort()`, `Collections.reverse()`, or any other convenience methods.
+
+## Common Mistakes
+
+- Using `contains()` or `indexOf()` instead of manually looping
+- Looping forwards when removing elements (causes skipped elements — loop backwards!)
+- Using `==` to compare Integer objects instead of `.equals()` or unboxing
+- Forgetting that `remove(int)` removes by index, not by value
+- Not creating a new ArrayList for methods that should return a new list
+
+## Autograding
+
+Your code is automatically graded when you push to GitHub. Check the **Actions** tab to see your score. Each method is tested independently — you earn points for each method you complete correctly.
+
+## Contact
+
+For questions, contact [kevin@csplusplus.com](mailto:kevin@csplusplus.com)
